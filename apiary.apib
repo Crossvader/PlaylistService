@@ -1,0 +1,47 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Tapelist.fm - Playlist
+
+Playlist is a service that exposes a REST API allowing consumers to view 
+playlists for a given artist name and concert date.
+
+## Playlists Collection [/playlists{?artist_name,concert_date}]
+
+### List All Playlists [GET]
+
+You may restrict/playlists by artist name and concert date. Returns a 
+concert along with tracks in JSON format.
+
++ Parameters
+
+    + artist_name - Artist name
+    + concert_date - Concent date
+
++ Response 200 (application/json)
+
+        {
+            "concert": {
+                "date": "2016-12-25",
+            },
+            "tracks": [
+                {
+                    "artist_name": "Drake",
+                    "album_name": "More Life",
+                    "track_name": "Fake Love",
+                    "release_year": "2017", 
+                    "isrc": "USCM51300064", 
+                    "duration": "3:31", 
+                    "spotify_identifier": "1YxmW7DO2dM05gwMKTbr7l"
+                },
+                {
+                    "artist_name": "Drake",
+                    "album_name": "More Life",
+                    "track_name": "Passionfruit",
+                    "release_year": "2017", 
+                    "isrc": "USCM51300072", 
+                    "duration": "4:59", 
+                    "spotify_identifier": "2jWsj743jfM05gwMKTb3sD"
+                }
+            ]
+        }
