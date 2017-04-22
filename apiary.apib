@@ -16,32 +16,34 @@ concert along with tracks in JSON format.
 + Parameters
 
     + artist_name (optional) - Artist name
-    + concert_date (optional) - Concent date
+    + concert_date (optional) - Concert date
 
 + Response 200 (application/json)
 
-        {
-            "concert": {
-                "date": "2016-12-25",
-            },
-            "playlist": [
-                {
-                    "artist_name": "Drake",
-                    "album_name": "More Life",
-                    "track_name": "Fake Love",
-                    "release_year": "2017", 
-                    "isrc": "USCM51300064", 
-                    "duration": "3:31", 
-                    "spotify_identifier": "1YxmW7DO2dM05gwMKTbr7l"
+        [
+            {
+                "concert": {
+                    "date": "2016-12-25",
                 },
-                {
-                    "artist_name": "Drake",
-                    "album_name": "More Life",
-                    "track_name": "Passionfruit",
-                    "release_year": "2017", 
-                    "isrc": "USCM51300072", 
-                    "duration": "4:59", 
-                    "spotify_identifier": "2jWsj743jfM05gwMKTb3sD"
-                }
-            ]
-        }
+                "tracks": [
+                    {
+                        "artist_name": "Drake",
+                        "album_name": "More Life",
+                        "track_name": "Fake Love",
+                        "release_year": "2017", 
+                        "isrc": "USCM51300064", 
+                        "duration": "3:31", 
+                        "spotify_identifier": "1YxmW7DO2dM05gwMKTbr7l"
+                    },
+                    {
+                        "artist_name": "Drake",
+                        "album_name": "More Life",
+                        "track_name": "Passionfruit",
+                        "release_year": "2017", 
+                        "isrc": "USCM51300072", 
+                        "duration": "4:59", 
+                        "spotify_identifier": "2jWsj743jfM05gwMKTb3sD"
+                    }
+                ]
+            }
+        ]
