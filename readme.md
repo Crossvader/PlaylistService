@@ -4,5 +4,5 @@
 
 ## Tools
 
- * REST API documentation: http://docs.tlplaylist.apiary.io/
- * Codeclimate: https://codeclimate.com/github/Tapelistfm/playlist
+ * [REST API documentation](http://docs.tlplaylist.apiary.io/)
+ * [Code Quality](https://codeclimate.com/github/Tapelistfm/playlist)
