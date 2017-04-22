@@ -58,10 +58,3 @@ rebuild this image.
 
  * https://github.com/elastic/elasticsearch-rails
  * https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-model
-
-## TODO
-
- * http://sourcey.com/building-the-prefect-rails-5-api-only-app/
- * Remote Debugging
-   - http://stackoverflow.com/questions/22794176/how-to-use-byebug-with-a-remote-process-e-g-pow
-   - http://blog.honeybadger.io/remote-debugging-with-byebug-rails-and-pow/
