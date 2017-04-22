@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: playlist-db-pod
+  labels:
+    run: playlist-db
+spec:
+  containers:
+  - name: playlist-db-container
+    image: postgres:alpine
+    env:
+    - name: POSTGRES_PASSWORD
+      value:
+    - name: POSTGRES_USER
+      value: postgres
+    - name: POSTGRES_DB
+      value: playlist_development
+    ports:
+    - containerPort: 5432
+      hostPort: 5432

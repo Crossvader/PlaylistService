@@ -1,0 +1,4 @@
+.git
+.dockerignore
+k8s
+# Gemfile.lock

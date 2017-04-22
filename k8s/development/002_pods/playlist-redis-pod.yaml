@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: playlist-redis-pod
+  labels:
+    run: playlist-redis
+spec:
+  containers:
+  - image: redis
+    name: playlist-redis-container
+    ports:
+    - containerPort: 6379
+      hostPort: 6379

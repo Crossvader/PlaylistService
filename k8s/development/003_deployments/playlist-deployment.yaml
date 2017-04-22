@@ -1,0 +1,59 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: playlist-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: playlist
+    spec:
+      containers:
+      - name: playlist-rails-container
+        image: tapelist/playlist:latest
+        imagePullPolicy: Never
+        env:
+          - name: RAILS_ENV
+            value: development
+          - name: RAILS_LOG_TO_STDOUT
+            value: "true"
+          - name: POSTGRES_PASSWORD
+            value:
+          - name: POSTGRES_USER
+            value: postgres
+          - name: REDIS_URL
+            value: redis://playlist-redis-service:6379/0
+          - name: ELASTICSEARCH_HOST
+            value: playlist-elasticsearch-service
+        # Debugging: Uncomment the following to create a long running process so
+        # that we can bash into a container created via this mainfest.
+        # command: ["tail", "-f", "/usr/src/app/Rakefile"]
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+          # Mount the volume to the following path in the container
+          - mountPath: /usr/src/app
+            name: development-playlist-volume
+          - mountPath: /usr/src/app/tmp
+            name: development-playlist-tmp-volume
+      # - name: playlist-sidekiq-container
+      #   image: tapelist/playlist:latest
+      #   imagePullPolicy: Never
+      #   command: ["sidekiq", "-C", "config/sidekiq.yml"]
+        env:
+          - name: REDIS_URL
+            value: redis://playlist-redis-service:6379/0
+          - name: ELASTICSEARCH_HOST
+            value: playlist-elasticsearch-service
+      volumes:
+        # Directory location on minikube host which automatically gets
+        # mounted from MacOS. I.e. MacOS host -> Minikube host -> container
+        - name: development-playlist-volume
+          hostPath:
+            path: /Users/keolo/repos/tapelist/playlist
+        # We need to override the tmp directory so that each container gets
+        # its own pid. Otherwise, the volume above will force us to share the
+        # same pid which will make puma think there is already a server running.
+        - name: development-playlist-tmp-volume
+          emptyDir: {}
