@@ -9,9 +9,6 @@ engines:
     config:
       languages:
       - ruby
-      - javascript
-      - python
-      - php
   fixme:
     enabled: true
   rubocop:
@@ -34,3 +31,4 @@ exclude_paths:
 - config/
 - db/
 - spec/
+- bin/
