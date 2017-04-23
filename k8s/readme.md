@@ -30,7 +30,7 @@ can test out images locally instead of uploading them to a remote registry.
 Build the docker image. Note, anytime the Gemfile is updated we'll want to
 rebuild this image.
 
-    docker build -t tapelist/playlist:latest .
+    docker build -t Crossvader/playlist:latest .
 
 ## Create, list, delete, etc. resources with Kubernetes
 
@@ -58,3 +58,5 @@ rebuild this image.
 
  * https://github.com/elastic/elasticsearch-rails
  * https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-model
+
+tracks = JSON.parse(resp.response_body)['setlists']['setlist']['set']['song'].map{ |key, value| key.first[1] }

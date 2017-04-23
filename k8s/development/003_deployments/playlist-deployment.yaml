@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: playlist-rails-container
-        image: tapelist/playlist:latest
+        image: Crossvader/playlist:latest
         imagePullPolicy: Never
         env:
           - name: RAILS_ENV
@@ -38,7 +38,7 @@ spec:
           - mountPath: /usr/src/app/tmp
             name: development-playlist-tmp-volume
       # - name: playlist-sidekiq-container
-      #   image: tapelist/playlist:latest
+      #   image: Crossvader/playlist:latest
       #   imagePullPolicy: Never
       #   command: ["sidekiq", "-C", "config/sidekiq.yml"]
         env:
@@ -51,7 +51,7 @@ spec:
         # mounted from MacOS. I.e. MacOS host -> Minikube host -> container
         - name: development-playlist-volume
           hostPath:
-            path: /Users/keolo/repos/tapelist/playlist
+            path: /Users/keolo/repos/Crossvader/playlist
         # We need to override the tmp directory so that each container gets
         # its own pid. Otherwise, the volume above will force us to share the
         # same pid which will make puma think there is already a server running.
