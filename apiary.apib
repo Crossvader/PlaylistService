@@ -1,49 +1,46 @@
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# Crossvader.com - Playlist
+# Crossvader.com - Playlist Service
 
-Playlist is a service that exposes a REST API allowing consumers to view 
-playlists for a given artist name and concert date.
+Playlist is a service that exposes a REST API allowing consumers to search 
+for a playlist for a given artist name and event date.
 
-## Playlists Collection [/v1/playlists{?artist_name,concert_date}]
+## Playlists Collection [/v1/playlists]
 
-### List All Playlists [GET]
+### Playlist Search [GET /v1/playlists/search{?artist_name,event_date}]
 
-You may restrict/filter playlists by `artist_name` and `concert_date`. Each 
-Playlist returns a `concert` along with `tracks` in JSON format.
+Return a Playlist with tracks and event details in JSON format.
 
 + Parameters
 
-    + artist_name (optional) - Artist name
-    + concert_date (optional) - Concert date
+    + artist_name - Artist name
+    + event_date - Event date
 
 + Response 200 (application/json)
 
-        [
-            {
-                "concert": {
-                    "event_date": "2016-12-25",
+        {
+            "event": {
+                "event_date": "2016-12-25",
+            },
+            "tracks": [
+                {
+                    "artist_name": "Drake",
+                    "album_name": "More Life",
+                    "track_name": "Fake Love",
+                    "release_year": "2017", 
+                    "isrc": "USCM51300064", 
+                    "duration": "3:31", 
+                    "spotify_identifier": "1YxmW7DO2dM05gwMKTbr7l"
                 },
-                "tracks": [
-                    {
-                        "artist_name": "Drake",
-                        "album_name": "More Life",
-                        "track_name": "Fake Love",
-                        "release_year": "2017", 
-                        "isrc": "USCM51300064", 
-                        "duration": "3:31", 
-                        "spotify_identifier": "1YxmW7DO2dM05gwMKTbr7l"
-                    },
-                    {
-                        "artist_name": "Drake",
-                        "album_name": "More Life",
-                        "track_name": "Passionfruit",
-                        "release_year": "2017", 
-                        "isrc": "USCM51300072", 
-                        "duration": "4:59", 
-                        "spotify_identifier": "2jWsj743jfM05gwMKTb3sD"
-                    }
-                ]
-            }
-        ]
+                {
+                    "artist_name": "Drake",
+                    "album_name": "More Life",
+                    "track_name": "Passionfruit",
+                    "release_year": "2017", 
+                    "isrc": "USCM51300072", 
+                    "duration": "4:59", 
+                    "spotify_identifier": "2jWsj743jfM05gwMKTb3sD"
+                }
+            ]
+        }
