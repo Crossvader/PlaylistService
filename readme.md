@@ -35,6 +35,7 @@
  * Playlist
    - has_many :tracks, through: :playlist_tracks, -> { order: { position: :desc } }
    - belongs_to :event
+   - event_id
    - name
  * PlaylistTrack
    - belongs_to :playlist

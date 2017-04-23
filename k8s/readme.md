@@ -30,7 +30,7 @@ can test out images locally instead of uploading them to a remote registry.
 Build the docker image. Note, anytime the Gemfile is updated we'll want to
 rebuild this image.
 
-    docker build -t Crossvader/playlist:latest .
+    docker build -t crossvader/playlist:latest .
 
 ## Create, list, delete, etc. resources with Kubernetes
 

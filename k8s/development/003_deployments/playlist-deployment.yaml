@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: playlist-rails-container
-        image: Crossvader/playlist:latest
+        image: crossvader/playlist:latest
         imagePullPolicy: Never
         env:
           - name: RAILS_ENV
@@ -38,7 +38,7 @@ spec:
           - mountPath: /usr/src/app/tmp
             name: development-playlist-tmp-volume
       # - name: playlist-sidekiq-container
-      #   image: Crossvader/playlist:latest
+      #   image: crossvader/playlist:latest
       #   imagePullPolicy: Never
       #   command: ["sidekiq", "-C", "config/sidekiq.yml"]
         env:
