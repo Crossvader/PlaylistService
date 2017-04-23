@@ -58,5 +58,3 @@ rebuild this image.
 
  * https://github.com/elastic/elasticsearch-rails
  * https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-model
-
-tracks = JSON.parse(resp.response_body)['setlists']['setlist']['set']['song'].map{ |key, value| key.first[1] }
