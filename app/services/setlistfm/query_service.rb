@@ -6,7 +6,7 @@ module Setlistfm
         search_setlists: "#{BASE_URI}/search/setlists.json"
       }
 
-      def get_setlist(artist_name:, event_date:)
+      def setlist(artist_name:, event_date:)
         @artist_name = artist_name
         @event_date = event_date
 
@@ -29,7 +29,7 @@ module Setlistfm
 
       def parse_setlist
         Setlistfm::SetlistParser
-          .song_names(@response.response_body)
+          .parse(@response.response_body)
       end
 
       def reformatted_date

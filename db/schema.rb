@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170423174737) do
+ActiveRecord::Schema.define(version: 20170423232820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170423174737) do
     t.string   "release_date_precision"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.index ["spotify_identifier"], name: "index_albums_on_spotify_identifier", unique: true, using: :btree
   end
 
   create_table "artists", force: :cascade do |t|
@@ -29,13 +30,15 @@ ActiveRecord::Schema.define(version: 20170423174737) do
     t.string   "name"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.index ["spotify_identifier"], name: "index_artists_on_spotify_identifier", unique: true, using: :btree
   end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.date     "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "setlistfm_identifer"
   end
 
   create_table "playlist_tracks", force: :cascade do |t|
@@ -67,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170423174737) do
     t.datetime "updated_at",         null: false
     t.index ["album_id"], name: "index_tracks_on_album_id", using: :btree
     t.index ["artist_id"], name: "index_tracks_on_artist_id", using: :btree
+    t.index ["spotify_identifier"], name: "index_tracks_on_spotify_identifier", unique: true, using: :btree
   end
 
   add_foreign_key "playlist_tracks", "playlists"
