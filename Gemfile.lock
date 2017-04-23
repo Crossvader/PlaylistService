@@ -153,6 +153,7 @@ GEM
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     unicode-display_width (1.2.1)
+    vcr (3.0.3)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -174,6 +175,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   typhoeus
   tzinfo-data
+  vcr
 
 BUNDLED WITH
    1.13.6

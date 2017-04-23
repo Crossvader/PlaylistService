@@ -15,7 +15,7 @@
    - Memoize/Cache request/response
      - https://api.setlist.fm/rest/0.1/search/setlists.json?artistName=Chromeo&date=18-02-2017
    - Parse response for Event(date, venue_name) and Tracks(name)
-     - tracks = JSON.parse(resp.response_body)['setlists']['setlist']['set']['song'].map{ |key, value| key.first[1] }
+     - tracks = JSON.parse(resp.response_body)['setlists']['setlist']['sets']['song'].map{ |key, value| key.first[1] }
  * Return {} if setlist has no data or if parsing fails
  * Store Event(date, venue_name) in database
  * Asynchronously request track and album details for each track
