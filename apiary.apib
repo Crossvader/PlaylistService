@@ -1,7 +1,7 @@
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# Crossvader.com - Playlist Service
+# Crossvader - Playlist Service
 
 Playlist is a service that exposes a REST API allowing consumers to search 
 for a playlist for a given artist name and event date.
@@ -20,27 +20,63 @@ Return a Playlist with tracks and event details in JSON format.
 + Response 200 (application/json)
 
         {
-            "event": {
-                "date": "2016-12-25",
-            },
-            "tracks": [
-                {
-                    "artist_name": "Drake",
-                    "album_name": "More Life",
-                    "track_name": "Fake Love",
-                    "release_year": "2017",
-                    "isrc": "USCM51300064",
-                    "duration": "3:31",
-                    "spotify_identifier": "1YxmW7DO2dM05gwMKTbr7l"
-                },
-                {
-                    "artist_name": "Drake",
-                    "album_name": "More Life",
-                    "track_name": "Passionfruit",
-                    "release_year": "2017",
-                    "isrc": "USCM51300072",
-                    "duration": "4:59",
-                    "spotify_identifier": "2jWsj743jfM05gwMKTb3sD"
+            "data": {
+                "type": "playlists",
+                "id": 4,
+                "attributes": {},
+                "links": {
+                    "self": "/v1/playlists/4"
                 }
-            ]
+                "relationships": {
+                    "tracks": {
+                        "links": {
+                            "self": "/v1/playlists/4/relationships/tracks",
+                            "related": "/v1/playlists/4/tracks"
+                        },
+                        "data": {
+                            [
+                                {
+                                    "type": "tracks",
+                                    "id": 32,
+                                    "attributes": {
+                                        "artist_name": "Drake",
+                                        "album_name": "More Life",
+                                        "track_name": "Fake Love",
+                                        "release_year": "2017",
+                                        "isrc": "USCM51300064",
+                                        "duration": "3:31",
+                                        "spotify_identifier": "1YxmW7DO2dM05gwMKTbr7l"
+                                    }
+                                },
+                                {
+                                    "type": "tracks",
+                                    "id": 5,
+                                    "attributes": {
+                                        "artist_name": "Drake",
+                                        "album_name": "More Life",
+                                        "track_name": "Passionfruit",
+                                        "release_year": "2017",
+                                        "isrc": "USCM51300072",
+                                        "duration": "4:59",
+                                        "spotify_identifier": "2jWsj743jfM05gwMKTb3sD"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                    "event": {
+                        "links": {
+                            "self": "/v1/playlists/4/relationships/event",
+                            "related": "/v1/playlists/4/event"
+                        },
+                        "data": {
+                            "type": "events",
+                            "id": 234,
+                            "attributes": {
+                                "date": "2016-12-25"
+                            }
+                        }
+                    }
+                }
+            }
         }
