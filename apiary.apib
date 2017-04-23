@@ -1,12 +1,12 @@
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# Tapelist.fm - Playlist
+# Crossvader.com - Playlist
 
 Playlist is a service that exposes a REST API allowing consumers to view 
 playlists for a given artist name and concert date.
 
-## Playlists Collection [/playlists{?artist_name,concert_date}]
+## Playlists Collection [/v1/playlists{?artist_name,concert_date}]
 
 ### List All Playlists [GET]
 
@@ -23,7 +23,7 @@ Playlist returns a `concert` along with `tracks` in JSON format.
         [
             {
                 "concert": {
-                    "date": "2016-12-25",
+                    "event_date": "2016-12-25",
                 },
                 "tracks": [
                     {
