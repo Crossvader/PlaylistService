@@ -15,31 +15,31 @@ Return a Playlist with tracks and event details in JSON format.
 + Parameters
 
     + artist_name - Artist name
-    + event_date - Event date
+    + event_date - Event date (yyyy-mm-dd)
 
 + Response 200 (application/json)
 
         {
             "event": {
-                "event_date": "2016-12-25",
+                "date": "2016-12-25",
             },
             "tracks": [
                 {
                     "artist_name": "Drake",
                     "album_name": "More Life",
                     "track_name": "Fake Love",
-                    "release_year": "2017", 
-                    "isrc": "USCM51300064", 
-                    "duration": "3:31", 
+                    "release_year": "2017",
+                    "isrc": "USCM51300064",
+                    "duration": "3:31",
                     "spotify_identifier": "1YxmW7DO2dM05gwMKTbr7l"
                 },
                 {
                     "artist_name": "Drake",
                     "album_name": "More Life",
                     "track_name": "Passionfruit",
-                    "release_year": "2017", 
-                    "isrc": "USCM51300072", 
-                    "duration": "4:59", 
+                    "release_year": "2017",
+                    "isrc": "USCM51300072",
+                    "duration": "4:59",
                     "spotify_identifier": "2jWsj743jfM05gwMKTb3sD"
                 }
             ]
