@@ -8,9 +8,11 @@ class ImportService
       persist_event
       persist_playlist
       query_playlist
-    rescue StandardError => error
-        # TODO: Add comprehensive error handling
-        {}
+    rescue StandardError
+      # TODO: Add comprehensive error handling
+      # * Don't rescue StandardError
+      # * Create our own custom errors and bubble those up
+      {}
       # rescue ImportService::Error => error
       #   # There was an error
       #   { errors: 'There was an error. Check the log for specifics.' }
