@@ -21,7 +21,7 @@ module Setlistfm
           .get(
             ENDPOINTS[:search_setlists],
             params: {
-              'artistName': @artist_name,
+              'artistName' => @artist_name,
               date: reformatted_date
             }
           )
