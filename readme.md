@@ -5,7 +5,7 @@
 ## Reference
 
  * http://crossvader.com
- * http://api.crossvader.com/v1/playlists/search?artist_name=Chromeo&event_date=2017-02-18
+ * [Demo API Endpoint](http://api.crossvader.com/v1/playlists/search?artist_name=Chromeo&event_date=2017-02-18)
  * [REST API documentation](http://docs.crossvader.apiary.io/)
  * [Code Quality](https://codeclimate.com/github/Crossvader/PlaylistService)
 
