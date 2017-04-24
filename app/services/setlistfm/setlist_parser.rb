@@ -11,7 +11,7 @@ module Setlistfm
             setlistfm_identifer: event_id,
             name: event_name
           },
-          song_names: song_names
+          track_names: track_names
         }
       end
 
@@ -29,7 +29,7 @@ module Setlistfm
           .try(:[], '@name')
       end
 
-      def song_names
+      def track_names
         @parsed_response
           .try(:[], 'sets')
           .try(:[], 'set')

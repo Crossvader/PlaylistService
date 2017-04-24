@@ -6,8 +6,8 @@ class ImportService
 
       query_setlist
       persist_event
-      query_playlist
       persist_playlist
+      query_playlist
       # rescue ImportService::Error => error
       #   # There was an error
       #   { errors: 'There was an error. Check the log for specifics.' }
@@ -24,17 +24,27 @@ class ImportService
     end
 
     def persist_event
-      Event.find_or_create_by(
+      @event = Event.find_or_create_by(
         @setlist[:event].merge(date: @event_date)
       )
     end
 
     def query_playlist
-      Spotify::QueryService
-        .playlist(@artist_name)
+      @playlist = Spotify::QueryService
+        .playlist(
+          artist_name: @artist_name,
+          track_names: @setlist[:track_names],
+          playlist: @playlist
+        )
     end
 
     def persist_playlist
+      playlist_name = "#{@artist_name} #{@event_date}"
+
+      @playlist = Playlist.find_or_create_by(
+        event: @event,
+        name: playlist_name
+      )
     end
   end
 end

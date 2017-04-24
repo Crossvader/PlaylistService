@@ -17,7 +17,7 @@ module Setlistfm
       private
 
       def query_setlist
-        @response = Typhoeus
+        @setlist_response = Typhoeus
           .get(
             ENDPOINTS[:search_setlists],
             params: {
@@ -29,7 +29,7 @@ module Setlistfm
 
       def parse_setlist
         Setlistfm::SetlistParser
-          .parse(@response.response_body)
+          .parse(@setlist_response.response_body)
       end
 
       def reformatted_date

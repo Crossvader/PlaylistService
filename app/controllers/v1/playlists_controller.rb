@@ -1,4 +1,5 @@
 class V1::PlaylistsController < ApplicationController
+  # ImportService.import_playlist(artist_name: 'Chromeo', event_date: '2017-02-18')
   def search
     playlist = ImportService.import_playlist(
       artist_name: params[:artist_name],
