@@ -21,7 +21,7 @@ can test out images locally instead of uploading them to a remote registry.
 
 ## Debuging minikube addons
 
-    get pods --all-namespaces
+    kubectl get pods --all-namespaces
     minikube addons list
     kubectl cluster-info
 

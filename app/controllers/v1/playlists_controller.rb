@@ -6,7 +6,9 @@ module V1
         event_date: params[:event_date]
       )
 
-      render json: playlist
+      render \
+        json: playlist,
+        include: ['tracks', 'event', 'tracks.album']
     end
   end
 end
