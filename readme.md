@@ -1,6 +1,6 @@
 # Playlist Service
 
-[![Code Climate](https://codeclimate.com/github/Crossvader/playlist/badges/gpa.svg)](https://codeclimate.com/github/Crossvader/PlaylistService)
+[![Code Climate](https://codeclimate.com/github/Crossvader/PlaylistService/badges/gpa.svg)](https://codeclimate.com/github/Crossvader/PlaylistService)
 
 ## Reference
 
@@ -67,3 +67,7 @@
    - has_many :playlists
    - name
    - date
+
+## Example Usage
+
+    ImportService.import_playlist(artist_name: 'Chromeo', event_date: '2017-02-18')
