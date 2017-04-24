@@ -1,5 +1,11 @@
 # Playlist Service
 
+## Install tooling
+
+ * Docker
+ * Minikube
+ * kubectrl
+
 ## Delete all unused data
 
     docker system prune
