@@ -28,7 +28,7 @@ spec:
             value: playlist-elasticsearch-service
         # Debugging: Uncomment the following to create a long running process so
         # that we can bash into a container created via this mainfest.
-        # command: ["tail", "-f", "/usr/src/app/Rakefile"]
+        command: ["tail", "-f", "/usr/src/app/Rakefile"]
         ports:
         - containerPort: 3000
         volumeMounts:

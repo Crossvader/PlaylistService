@@ -71,3 +71,6 @@
 ## Example Usage
 
     ImportService.import_playlist(artist_name: 'Chromeo', event_date: '2017-02-18')
+
+
+    curl $(minikube service playlist-service --url)/v1/playlists/search?artist_name=Chromeo&event_date=2017-02-18
