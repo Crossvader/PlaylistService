@@ -7,6 +7,10 @@
  * [REST API documentation](http://docs.crossvader.apiary.io/)
  * [Code Quality](https://codeclimate.com/github/Crossvader/PlaylistService)
 
+## Running Locally
+
+ *  [Kubernetes](https://github.com/Crossvader/PlaylistService/blob/master/k8s/readme.md)
+
 ## Process
 
  * Create API endpoint that takes artist_name and event_date params
