@@ -4,7 +4,7 @@ module Spotify
       BASE_URI = 'https://api.spotify.com/v1'
       ENDPOINTS = {
         search: "#{BASE_URI}/search",
-        albums: "#{BASE_URI}/albums",
+        albums: "#{BASE_URI}/albums"
       }
 
       def playlist(artist_name:, track_names:, playlist:)
