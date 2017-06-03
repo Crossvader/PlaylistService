@@ -28,7 +28,7 @@ spec:
             value: playlist-elasticsearch-service
         # Debugging: Uncomment the following to create a long running process so
         # that we can bash into a container created via this mainfest.
-        # command: ["tail", "-f", "/usr/src/app/Rakefile"]
+        # command: ["tail", "-f", "/dev/null"]
         ports:
         - containerPort: 3000
         volumeMounts:
@@ -51,7 +51,7 @@ spec:
         # mounted from MacOS. I.e. MacOS host -> Minikube host -> container
         - name: development-playlist-volume
           hostPath:
-            path: /Users/keolo/repos/Crossvader/playlist
+            path: /Users/keolo/Repositories/Crossvader/PlaylistService
         # We need to override the tmp directory so that each container gets
         # its own pid. Otherwise, the volume above will force us to share the
         # same pid which will make puma think there is already a server running.
